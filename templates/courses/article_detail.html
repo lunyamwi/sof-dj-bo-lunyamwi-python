@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Article Detail View</h1>
+{% if object is not None %}
+    {% for article in object%}
+        {{article.title}}
+        {{article.content|safe }}
+    {% endfor %}
+{% else %}
+    <h3>Upgrade Membership</h3>
+    <p>To view this course you'll need to upgrade your memberships</p>
+    <br>
+    <a href="{% url 'members:select' %}">
+        <button class="btn btn-warning">
+            Check out memberships
+        </button>
+    </a>
+{% endif %}
+{% endblock content %}

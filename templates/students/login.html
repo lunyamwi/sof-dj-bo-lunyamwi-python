@@ -1,0 +1,117 @@
+{% load static %} {% block content %} {% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>
+      Actserv - Bootstrap Admin Dashboard Template by Themefisher.com
+    </title>
+    <!-- Favicon icon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../../assets/images/favicon.png"
+    />
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  </head>
+
+  <body class="h-100">
+    <style>
+      body {
+        background: -webkit-gradient(
+          linear,
+          left top,
+          left bottom,
+          from(rgba(0, 0, 0, 0.9)),
+          to(transparent)
+        );
+        background: linear-gradient(rgba(0, 0, 0, 0.9), transparent);
+      }
+    </style>
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+      <div class="loader">
+        <svg class="circular" viewBox="25 25 50 50">
+          <circle
+            class="path"
+            cx="50"
+            cy="50"
+            r="20"
+            fill="none"
+            stroke-width="3"
+            stroke-miterlimit="10"
+          />
+        </svg>
+      </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <div class="login-form-bg h-100">
+      <div class="container h-100">
+        <div class="row justify-content-center h-100">
+          <div class="col-xl-6">
+            <div class="form-input-content">
+              <div class="card login-form mb-0">
+                <div class="card-body pt-5">
+                  <a class="text-center"> <h4>Lunyamwi</h4></a>
+
+                  <form class="mt-5 mb-5 login-input" method="POST">
+                    {%if messages%}
+                    <div class="alert alert-danger">
+                      {% for message in messages %} {% if forloop.first %}
+                      {{message}} {% endif %} {% endfor %}
+                    </div>
+                    {%endif%} {% csrf_token %} {% crispy form %}
+                  </form>
+                  <div class="row">
+                    <div class="col col-md-6">
+                      <p class="mt-5 login-form__footer">
+                        Dont have account?
+                        <a
+                          href="{% url 'members:sign_up' %}"
+                          class="text-primary"
+                          >Sign Up</a
+                        >
+                        now
+                      </p>
+                    </div>
+                    <div class="col col-md-6">
+                      <p class="mt-5 login-form__footer">
+                        Forgot Password?
+                        <a
+                          href="{% url 'password_reset' %}"
+                          class="text-primary"
+                          >Click</a
+                        >
+                        to reset
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="{% static 'plugins/common/common.min.js' %}"></script>
+    <script src="{% static 'js/custom.min.js' %}"></script>
+    <script src="{% static 'js/settings.js' %}"></script>
+    <script src="{% static 'js/gleek.js' %}"></script>
+    <script src="{% static 'js/styleSwitcher.js' %}"></script>
+  </body>
+</html>
+
+{% endblock %}

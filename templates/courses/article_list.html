@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Article List View</h3>
+{% for object in object_list %}
+<div class="col">
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">{{object.title}}</div>
+            <div class="panel-body">{{object.title}}</div>
+            <div class="panel-footer"> <a href="{{object.get_absolute_url}}">Study Article....</a></div>
+          </div>    
+    </div>
+</div>
+{% endfor %}
+{% endblock content %}

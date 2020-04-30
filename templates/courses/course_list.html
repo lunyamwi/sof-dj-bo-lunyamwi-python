@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Course List View</h1>
+<h1>Lunyamwi organization.</h1>
+
+		<p> Lunyamwi organization is an organization that aims at providing computing knowledge together with current trends of 
+			technology. The knowledge gained can be used to gain a job in the jobs section which is coming in very soon.
+			The articles written are documentation based. So one can learn how to study the documentation and feel free
+			to explosively create their programs without knowledge gaps or barriers which is a very vital skill.
+			We write books about computational knowledge and you can purchase this books at your advantage. But even much more better is that we
+			offer a superb program of newsletters and also study-helpers. 
+			This means that one can get into the one book per week program where you select a book and can study it together with an expert 
+			per week. This books are the ones that you select and feel have the content that you may need to further your projects. We are 
+			not a consulting company but a company that creates quality source code to be shipped to our consumers for the highest satisfaction. We
+			cover the entire computer curricula. of course one can not learn the entire documentation but can at least learn how to work.
+			In the gallery you can view the softwares that we are selling and also the projects we are undertaking. Don't squander your time doing
+			nothing create a portfolio with us and begin working with us as we scale into greater heights. We have our source code that is open source for
+			we believe in foss. Any source code that is created will be deployed to the organization repo if it ofcourse meets the industry standard and is ready
+			for sale. Stay blessed and stay innovative. Thank you.
+        </p>
+        
+        <h3><strong>Courses Available</strong></h3>
+<ul>
+    {% for object in object_list %}
+    <li>
+        <a href="{{object.get_absolute_url}}">{{object}}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock content %}

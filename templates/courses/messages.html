@@ -1,0 +1,20 @@
+{% if messages %}
+<style type="text/css">
+    div.messages{
+        background-color:brown;
+    }
+</style>
+<div class="alert alert-info">
+    <ul>
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{message.tags}}" {% endif %}>
+            {% if "html_safe" in message.tags %}
+            {{message|safe}}
+            {% else %}
+            {{message}}
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}

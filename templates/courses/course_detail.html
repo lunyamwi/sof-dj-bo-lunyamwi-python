@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+<p>{{object.title}}</p>
+{% for lesson in object.lessons %}
+<div class="col">
+    <div class="col-sm-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">{{lesson.title}}</div>
+            <div class="panel-body">{{lesson.title}}</div>
+            <div class="panel-footer"> <a href="{{lesson.get_absolute_url}}">Go to course....</a></div>
+          </div>    
+    </div>
+</div>
+{% endfor %}
+
+{% endblock content %}
