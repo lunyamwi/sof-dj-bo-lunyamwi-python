@@ -12,6 +12,7 @@ pillow = "*"
 django-ckeditor = "*"
 django-crispy = "*"
 django-crispy-forms = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.6"
